@@ -1,0 +1,55 @@
+<html>
+<head>
+
+    <title>Google Maps Multiple Markers</title>
+    <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+</head>
+<body>
+<div id="map" style="height: 100%; width: 100%;">
+</div>
+<script type="text/javascript">
+    var locations = [
+      ['RS IZZA <br> wowo', -6.389758,107.466499],
+      ['RS FIKRI MEDIKA', -6.352003,107.378086],
+      ['RS DEWI SRI', -6.304424,107.297835],
+      ['RS MANDAYA', -6.304911,107.277907],
+	  ['RS KARYA HUSADA', -6.401041,107.443574],
+	  ['RS BAYUKARTA', -6.303647,107.292155],
+	  ['RS PROKLAMASI', -6.170436,107.297514],
+	  ['RS DELIMA ASIH', -6.314937,107.316373],
+	  ['RS PERSADA MEDIKA', -6.413285,107.464626],
+	  ['RS ROSELA', -6.334228,107.273361],
+	  ['RS LIRA MEDIKA', -6.302340,107.326700],
+	  ['RSUD KARAWANG', -6.320475,107.293152],
+	  ['RS ISLAM KARAWANG', -6.281446,107.283270],
+	  ['RS SARASWATI',-6.421670,107.475836],
+	  ['RS PURI ASIH',-6.371648,107.520976],
+      ['RS CITRA SARI INTAN BAROKAH', -6.349775	,107.377613]
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 11,
+      center: new google.maps.LatLng(-6.326864, 107.318981),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
+</body>
+</html>

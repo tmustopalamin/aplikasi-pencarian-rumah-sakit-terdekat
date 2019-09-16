@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".CariCepat">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#313131"
+
+        >
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:gravity="center_horizontal"
+            android:text="Rumah Sakit yang terdekat dengan\nposisi kamu yaitu:"/>
+
+        <TextView
+            android:id="@+id/tvRS"
+            android:layout_below="@id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textColor="#ffffff"
+            android:padding="10dp"
+            android:gravity="center_horizontal"
+            android:textAllCaps="true"
+            android:maxLines="2"
+            android:text="Mencari..."
+            />
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_below="@id/tvRS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:gravity="center_horizontal"
+            android:text="Mencari..."
+        />
+
+        <LinearLayout
+            android:paddingTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv3"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/detailButton"
+                android:drawableTop="@drawable/info"
+                android:background="@drawable/button_tampil"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="Detail"/>
+
+            <Button
+                android:id="@+id/arahkanButton"
+                android:drawableTop="@drawable/arahkan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_tampil"
+                android:textColor="#000000"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:padding="4dp"
+                android:text="petunjuk arah"/>
+
+            <Button
+                android:id="@+id/hubungiBtn"
+                android:drawableTop="@drawable/telepon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_tampil"
+                android:textColor="#000000"
+                android:padding="4dp"
+                android:text="hubungi"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/listviewCari"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="1dp">
+
+    </ListView>
+</LinearLayout>
